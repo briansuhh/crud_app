@@ -1,0 +1,78 @@
+<body>
+  <br />
+  <br />
+
+  <div class="justify-content-center align-items-center">
+    <form (ngSubmit)="goToEmployee()">
+      <div class="form-group col-md-6 inline">
+        <input
+          [(ngModel)]="EnteredID"
+          type="text"
+          class="form-control"
+          id="id"
+          name="id"
+          placeholder="Search by ID"
+          style="width: 300px"
+        />
+        <button class="btn btn-secondary" type="submit">Search</button>
+      </div>
+    </form>
+  </div>
+  <br />
+  <br />
+  <div>
+    <table
+      style="margin-bottom: 50px"
+      class="table table-responsive table-striped border-dark"
+    >
+      <thead class="table-dark">
+        <tr class="display block">
+          <th>Id</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Phone</th>
+          <th>Email</th>
+          <th>Address</th>
+          <th>Role</th>
+          <th>Responsibility</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let employee of employees">
+          <td>{{ employee.id }}</td>
+          <td>{{ employee.firstName }}</td>
+          <td>{{ employee.lastName }}</td>
+          <td>{{ employee.phoneNum }}</td>
+          <td>{{ employee.email }}</td>
+          <td>{{ employee.address }}</td>
+          <td>{{ employee.role }}</td>
+          <td>{{ employee.responsibility }}</td>
+          <td>
+            <button
+              (click)="updateEmployee(employee.id)"
+              class="btn btn-secondary btn-sm"
+            >
+              Update
+            </button>
+            <button
+              (click)="deleteEmployee(employee.id)"
+              class="btn btn-danger btn-sm"
+              style="margin-left: 10px"
+            >
+              Delete
+            </button>
+            <button
+              (click)="detailsOfEmployee(employee.id)"
+              class="btn btn-success btn-sm"
+              style="margin-left: 10px"
+            >
+              View
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
