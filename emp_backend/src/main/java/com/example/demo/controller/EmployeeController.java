@@ -1,5 +1,9 @@
 package com.example.demo.controller;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -16,9 +20,7 @@ import com.example.demo.exception.ResourceNotFoundException;
 import com.example.demo.model.Employee;
 import com.example.demo.repository.EmployeeRepository;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+
 
 @RestController
 @RequestMapping("/api/v1/")
@@ -63,8 +65,8 @@ public class EmployeeController {
 				orElseThrow(()-> new ResourceNotFoundException("Employee with id "+id+"does not exists"));
 		
 		
-		employee.setFname(employeeDetails.getFname());
-		employee.setLname(employeeDetails.getLname());
+		employee.setFirstName(employeeDetails.getFirstName());
+		employee.setLastName(employeeDetails.getLastName());
 		employee.setEmail(employeeDetails.getEmail());
 		employee.setDepartment(employeeDetails.getDepartment());
 		employee.setDesignation(employeeDetails.getDesignation());
@@ -93,14 +95,5 @@ public class EmployeeController {
 		return ResponseEntity.ok(response);
 	
 }
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 }

@@ -16,30 +16,31 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.adminModel.adminModel;
-import com.example.demo.adminRepository.adminRepository;
+import com.example.demo.exception.ResourceNotFoundException;
+import com.example.demo.adminModel.AdminModel;
+import com.example.demo.adminRepository.AdminRepository;
 
 
 @RestController
 @RequestMapping("/api/v1/")
-public class adminController {
+public class AdminController {
 	
 	
 	@Autowired
-	private adminRepository repo;
+	private AdminRepository repo;
 
 	
 	//get all data		
 	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping("/admin")
-	public List <adminModel> getAllAdmins(){
+	public List <AdminModel> getAllAdmins(){
 		return repo.findAll();
 	}
 
 	//create 
 	@CrossOrigin(origins = "http://localhost:4200")
 	@PostMapping("/admin")
-	public adminModel createAdmin(@RequestBody adminModel admin)
+	public AdminModel createAdmin(@RequestBody AdminModel admin)
 	{
 		return repo.save(admin);
 	}
@@ -47,21 +48,21 @@ public class adminController {
 	// get data by id
 	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping("/admin/{id}")
-	public ResponseEntity<adminModel> getByID(@PathVariable Long id) {
-		adminModel admin = repo.findById(id).orElseThrow(()-> new RuntimeException("Admin with id "+id+"does not exists"));
+	public ResponseEntity<AdminModel> getByID(@PathVariable Long id) {
+		AdminModel admin = repo.findById(id).orElseThrow(()-> new RuntimeException("Admin with id "+id+"does not exists"));
 		return ResponseEntity.ok(admin);
 	}
 
 	//update data
 	@CrossOrigin(origins = "http://localhost:4200")
 	@PutMapping ("/admin/{id}")
-	public ResponseEntity<adminModel> updateAdmin(@PathVariable Long id, @RequestBody adminModel adminDetails){
-		adminModel admin = repo.findById(id).orElseThrow(()-> new RuntimeException("Admin with id "+id+"does not exists"));
+	public ResponseEntity<AdminModel> updateAdmin(@PathVariable Long id, @RequestBody AdminModel adminDetails){
+		AdminModel admin = repo.findById(id).orElseThrow(()-> new ResourceNotFoundException("Admin with id "+id+"does not exists"));
 
 		admin.setAdminName(adminDetails.getAdminName());
 		admin.setAdminPassword(adminDetails.getAdminPassword());
 
-		adminModel updatedAdmin = repo.save(admin);
+		AdminModel updatedAdmin = repo.save(admin);
 
 		return ResponseEntity.ok(updatedAdmin);
 	}
@@ -70,7 +71,7 @@ public class adminController {
 	@CrossOrigin(origins = "http://localhost:4200")
 	@DeleteMapping("/admin/{id}")
 	public ResponseEntity<Map<String, Boolean>> deleteAdmin(@PathVariable Long id){
-		adminModel admin = repo.findById(id).orElseThrow(()-> new RuntimeException("Admin with id "+id+"does not exists"));
+		AdminModel admin = repo.findById(id).orElseThrow(()-> new ResourceNotFoundException("Admin with id "+id+"does not exists"));
 
 		repo.delete(admin);
 		Map<String, Boolean> response = new HashMap<>();
