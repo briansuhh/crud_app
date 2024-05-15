@@ -1,0 +1,174 @@
+<body>
+  <br /><br /><br /><br />
+  <div class="container-sm">
+    <div class="col-md-6 offset-md-3 container-sm">
+      <form
+        #f="ngForm"
+        (ngSubmit)="f.form.valid && onSubmit()"
+        class="row g-3 form-container container-sm"
+      >
+        <div class="form-group col-md-6">
+          <label><b>First Name</b></label>
+          <input
+            type="text"
+            class="form-control"
+            id="fname"
+            [(ngModel)]="user.firstName"
+            required
+            minlength="3"
+            name="firstName"
+            #fname="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && fname.errors }"
+          />
+          <div *ngIf="f.submitted && fname.errors" class="invalid-feedback">
+            <div *ngIf="fname.errors['required']">First name is required</div>
+            <div *ngIf="fname.errors['minlength']">
+              First Name minimum 3 characters are required!!!
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group col-md-6">
+          <label><b>Last Name</b></label>
+          <input
+            type="text"
+            class="form-control"
+            id="lname"
+            [(ngModel)]="user.lastName"
+            name="lastName"
+            required
+            name="lastName"
+            #lname="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && lname.errors }"
+          />
+
+          <div *ngIf="f.submitted && lname.errors" class="invalid-feedback">
+            <div *ngIf="lname.errors['required']">Last name is required</div>
+          </div>
+        </div>
+
+        <br /><br />
+
+        <div class="form-group">
+          <label><b>Email Id</b></label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            [(ngModel)]="user.email"
+            name="email"
+            required
+            email
+            #email="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && email.errors }"
+          />
+
+          <div *ngIf="f.submitted && email.errors" class="invalid-feedback">
+            <div *ngIf="email.errors['required']">Email is required</div>
+            <div *ngIf="email.invalid">Invalid email format</div>
+          </div>
+        </div>
+
+        <br /><br />
+
+        <div class="form-group col-md-6">
+          <label class="form-label"><b>Phone Number</b></label>
+          <input
+            type="text"
+            class="form-control"
+            id="phoneNum"
+            [(ngModel)]="user.phoneNum"
+            name="phoneNum"
+            required
+            #phoneNum="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && phoneNum.errors }"
+          />
+          <div *ngIf="f.submitted && phoneNum.errors" class="invalid-feedback">
+            <div *ngIf="phoneNum.errors['required']">
+              Phone number is required
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group col-md-6">
+          <label class="form-label"><b>Address</b></label>
+          <input
+            type="text"
+            class="form-control"
+            id="address"
+            [(ngModel)]="user.address"
+            name="address"
+            required
+            #address="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && address.errors }"
+          />
+          <div *ngIf="f.submitted && address.errors" class="invalid-feedback">
+            <div *ngIf="address.errors['required']">Address is required</div>
+          </div>
+        </div>
+
+        <br /><br />
+
+        <div class="form-group col-md-6">
+          <label class="form-label"><b>Role</b></label>
+          <select
+            id="role"
+            class="form-select"
+            [(ngModel)]="user.role"
+            name="role"
+            required
+            #role="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && role.errors }"
+          >
+            <div *ngIf="f.submitted && role.errors" class="invalid-feedback">
+              <div *ngIf="role.errors['required']">Role is required</div>
+            </div>
+            <option selected disabled value="">Choose..</option>
+            <option>CLIENT</option>
+            <option>PRODUCER</option>
+          </select>
+        </div>
+
+        <div class="form-group col-md-6">
+          <label><b>Responsibility</b></label>
+          <input
+            type="text"
+            class="form-control"
+            id="responsibility"
+            [(ngModel)]="user.responsibility"
+            name="responsibility"
+            required
+            #responsibility="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && responsibility.errors }"
+          />
+          <div
+            *ngIf="f.submitted && responsibility.errors"
+            class="invalid-feedback"
+          >
+            <div *ngIf="responsibility.errors['required']">
+              Responsibility is required
+            </div>
+          </div>
+        </div>
+
+        <br /><br /><br /><br />
+
+        <div class="form-group col-md-6">
+          <button class="btn btn-success full-width-button" type="submit">
+            Submit
+          </button>
+        </div>
+
+        <div class="col-md-6">
+          <button
+            type="button"
+            (click)="goToUserList()"
+            class="btn btn-danger full-width-button"
+          >
+            Cancel
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>

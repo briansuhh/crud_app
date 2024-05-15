@@ -11,8 +11,8 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent {
   constructor(private router: Router) {}
-  goToEmployeeList() {
-    this.router.navigate(['/show-all-employees']);
+  goToUserList() {
+    this.router.navigate(['/show-all-users']);
   }
   // images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/2000/600`);
 }

@@ -3,14 +3,14 @@
   <br />
 
   <div class="justify-content-center align-items-center">
-    <form (ngSubmit)="goToEmployee()">
+    <form (ngSubmit)="goToUser()">
       <div class="form-group col-md-6 inline">
         <input
           [(ngModel)]="EnteredID"
           type="text"
           class="form-control"
-          id="id"
-          name="id"
+          id="userID"
+          name="userID"
           placeholder="Search by ID"
           style="width: 300px"
         />
@@ -40,31 +40,31 @@
       </thead>
 
       <tbody>
-        <tr *ngFor="let employee of employees">
-          <td>{{ employee.id }}</td>
-          <td>{{ employee.firstName }}</td>
-          <td>{{ employee.lastName }}</td>
-          <td>{{ employee.phoneNum }}</td>
-          <td>{{ employee.email }}</td>
-          <td>{{ employee.address }}</td>
-          <td>{{ employee.role }}</td>
-          <td>{{ employee.responsibility }}</td>
+        <tr *ngFor="let user of users">
+          <td>{{ user.userID }}</td>
+          <td>{{ user.firstName }}</td>
+          <td>{{ user.lastName }}</td>
+          <td>{{ user.phoneNum }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.address }}</td>
+          <td>{{ user.role }}</td>
+          <td>{{ user.responsibility }}</td>
           <td>
             <button
-              (click)="updateEmployee(employee.id)"
+              (click)="updateUser(user.userID)"
               class="btn btn-secondary btn-sm"
             >
               Update
             </button>
             <button
-              (click)="deleteEmployee(employee.id)"
+              (click)="deleteUser(user.userID)"
               class="btn btn-danger btn-sm"
               style="margin-left: 10px"
             >
               Delete
             </button>
             <button
-              (click)="detailsOfEmployee(employee.id)"
+              (click)="detailsOfUser(user.userID)"
               class="btn btn-success btn-sm"
               style="margin-left: 10px"
             >

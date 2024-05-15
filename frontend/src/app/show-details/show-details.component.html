@@ -1,7 +1,7 @@
 <br />
 
 <div class="container">
-  <h3>Employee Details</h3>
+  <h3>User Details</h3>
   <br />
   <div class="box">
     <div>
@@ -19,46 +19,46 @@
         <tbody>
           <tr>
             <td><b>Id</b></td>
-            <td>{{ employee.id }}</td>
+            <td>{{ user.userID }}</td>
           </tr>
           <tr>
             <td><b>First Name</b></td>
-            <td>{{ employee.fname }}</td>
+            <td>{{ user.firstName }}</td>
           </tr>
           <tr>
             <td><b>Last Name</b></td>
-            <td>{{ employee.lname }}</td>
+            <td>{{ user.lastName }}</td>
           </tr>
           <tr>
             <td><b>Email</b></td>
-            <td>{{ employee.email }}</td>
+            <td>{{ user.email }}</td>
           </tr>
           <tr>
-            <td><b>Salary</b></td>
-            <td>{{ employee.salary }}</td>
+            <td><b>Role</b></td>
+            <td>{{ user.role }}</td>
           </tr>
           <tr>
-            <td><b>Department</b></td>
-            <td>{{ employee.department }}</td>
+            <td><b>Phone Number</b></td>
+            <td>{{ user.phoneNum }}</td>
           </tr>
           <tr>
-            <td><b>Designation</b></td>
-            <td>{{ employee.designation }}</td>
+            <td><b>Address</b></td>
+            <td>{{ user.address }}</td>
           </tr>
           <tr>
-            <td><b>Joining Date</b></td>
-            <td>{{ employee.joiningDate }}</td>
+            <td><b>Responsibility</b></td>
+            <td>{{ user.responsibility }}</td>
           </tr>
         </tbody>
       </table>
 
       <a
-        routerLink="/updating-by-id/{{ employee.id }}"
+        routerLink="/updating-by-id/{{ user.userID }}"
         id="btn1"
         class="btn btn-secondary"
         >Update Details</a
       >
-      <a routerLink="/show-all-employees" id="btn2" class="btn btn-danger"
+      <a routerLink="/show-all-users" id="btn2" class="btn btn-danger"
         >Back</a
       >
     </div>

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Employee } from '../employee';
-import { EmployeeService } from '../employee.service';
+import { User } from '../user';
+import { UserService } from '../user.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -9,21 +9,22 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./show-details.component.css'],
 })
 export class ShowDetailsComponent {
-  id: number;
-  employee!: Employee;
+  userID: number;
+  user!: User;
+
   constructor(
     private route: ActivatedRoute,
-    private employeService: EmployeeService
+    private userService: UserService
   ) {
-    this.id = 0;
+    this.userID = 0;
   }
 
   ngOnInit(): void {
-    this.id = this.route.snapshot.params['id'];
+    this.userID = this.route.snapshot.params['userID'];
 
-    this.employee = new Employee();
-    this.employeService.getEmployeeById(this.id).subscribe((data) => {
-      this.employee = data;
+    this.user = new User();
+    this.userService.getUserById(this.userID).subscribe((data) => {
+      this.user = data;
     });
   }
 }
