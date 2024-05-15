@@ -35,20 +35,20 @@ export class UserListComponent {
     });
   }
 
-  updateUser(id: number) {
-    this.router.navigate(['updating-by-id', id]);
+  updateUser(userID: number) {
+    this.router.navigate(['updating-by-id', userID]);
   }
 
-  deleteUser(id: number) {
-    if (confirm('Are you sure to delete User ID: ' + id)) {
-      this.userService.deleteUser(id).subscribe((data) => {
+  deleteUser(userID: number) {
+    if (confirm('Are you sure to delete User ID: ' + userID)) {
+      this.userService.deleteUser(userID).subscribe((data) => {
         console.log(data);
         this.getUsers();
       });
     }
   }
 
-  detailsOfUser(id: number) {
-    this.router.navigate(['details-of-user', id]);
+  detailsOfUser(userID: number) {
+    this.router.navigate(['details-of-user', userID]);
   }
 }
