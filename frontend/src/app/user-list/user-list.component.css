@@ -11,6 +11,7 @@ body {
 table {
   width: 100%;
   border-collapse: collapse;
+  outline: 1px solid black;
 }
  
  .btn {

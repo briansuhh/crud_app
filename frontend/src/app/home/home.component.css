@@ -1,5 +1,4 @@
 * {
-  /* box-sizing: border-box; */
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   display: block;
@@ -14,7 +13,6 @@
 }
 
 .navigation {
-  /* display: flex; */
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -31,8 +29,6 @@
 
 section {
   position: relative;
-  /* width: 100%; */
-
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
@@ -49,7 +45,6 @@ section {
   justify-content: center;
   align-items: center;
   margin-top: 2.5rem;
-  /* margin-left: 2rem; */
 }
 
 .text #t1 {
@@ -58,43 +53,40 @@ section {
 }
 
 ul {
-  list-style-type: none; /* Remove default list style */
-  margin: 1rem 3rem; /* Add some margin using rem units for spacing */
-  padding: 0; /* Remove default padding */
+  list-style-type: none; 
+  margin: 1rem 3rem; 
+  padding: 0; 
 }
 
 li {
-  font-size: 1.5rem; /* Font size using rem units */
-  margin-bottom: 0.2rem; /* Margin using rem units for spacing */
+  font-size: 1.5rem; 
+  margin-bottom: 0.2rem; 
 }
 
 ul.category {
-  margin-left: 0; /* Reset margin for the category list */
+  margin-left: 0;
 }
 
 ul.category li {
-  font-weight: bold; /* Make category items bold */
-  font-size: 1.5rem; /* Font size for category items */
-  margin-bottom: 0.2rem; /* Adjust margin for category items */
+  font-weight: bold; 
+  font-size: 1.5rem; 
+  margin-bottom: 0.2rem; 
 }
 
 ul.subcategory {
-  list-style-type: disc; /* Use 'disc' for filled circles for subcategories */
-  margin-left: 2rem; /* Indent subcategories */
+  list-style-type: disc; 
+  margin-left: 2rem; 
 }
 
 ul.subcategory li {
-  font-weight: normal; /* Reset font weight for subcategory items */
-  font-size: 1.3rem; /* Font size for subcategory items */
+  font-weight: normal; 
+  font-size: 1.3rem; 
 }
 
 .about {
   background-color: white;
 }
 
-html {
-  box-sizing: border-box;
-}
 
 *,
 *:before,
