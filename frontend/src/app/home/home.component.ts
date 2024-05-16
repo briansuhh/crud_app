@@ -7,7 +7,6 @@ import { Router } from '@angular/router';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
   standalone: true,
-  imports: [NgbCarouselModule],
 })
 export class HomeComponent {
   constructor(private router: Router) {}

@@ -17,7 +17,7 @@ footer {
 }
 
 form {
-  padding: 20px; /* Add some padding for better visual appearance */
+  padding: 20px; 
   box-shadow: 10px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -26,8 +26,8 @@ button {
 }
 
 .form-container {
-  border: 1px solid #000000;
-  padding: 20px; /* Add some padding for better visual appearance */
+  border: 1px solid rgb(20, 0, 0);
+  padding: 20px; 
 }
 
 .form-label {
@@ -36,11 +36,11 @@ button {
 }
 
 input {
-  border: 1px solid #000000;
+  border: 1px solid rgb(10, 0, 0);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 select {
-  border: 1px solid #000000;
+  border: 1px solid rgb(10, 0, 0);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }

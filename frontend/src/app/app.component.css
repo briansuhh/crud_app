@@ -12,5 +12,44 @@
 
 .sidenav-content{
   flex: 1; 
-  overflow: auto;
+  background-color: white;
 }
+
+.image-container {
+  display: flex;
+  width: 200px;
+  height: 150px;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container img {
+  width: 100%; 
+  height: auto;
+}
+
+.nav-list {
+  padding: 0; 
+  margin: 0; 
+  list-style-type: none; 
+  font-size: 18px; 
+  font-family: Arial, sans-serif;
+}
+
+.mat-list-item {
+  display: inline-flex; 
+  align-items: center; 
+}
+
+.mat-icon {
+  margin-right: 8px; 
+  vertical-align: middle; 
+}
+
+.nav-text {
+  margin: 0;
+  display: inline; 
+}
+
+
+

@@ -13,17 +13,23 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatIconModule } from '@angular/material/icon';
+import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material/core';
+import { DomSanitizer } from '@angular/platform-browser';
+
 
 import { UpdateUserComponent } from './update-user/update-user.component';
 import { ShowDetailsComponent } from './show-details/show-details.component';
 import { HomeComponent } from './home/home.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+const svgIcons = [
+  'car',
+];
 
 @NgModule({
   declarations: [
@@ -58,4 +64,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+  constructor(matIconRegistry: MatIconRegistry, domSanitizer: DomSanitizer) {
+    svgIcons.forEach(iconName => {
+      matIconRegistry.addSvgIcon(
+        iconName,
+        domSanitizer.bypassSecurityTrustResourceUrl(`assets/icons/${iconName}.svg`)
+      );
+    });
+  }
+}

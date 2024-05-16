@@ -1,3 +1,13 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  background-color: white;
+}
+
 .divider:after,
 .divider:before {
   content: "";
@@ -5,11 +15,36 @@
   height: 1px;
   background: #eee;
 }
+
 .h-custom {
   height: calc(100% - 73px);
 }
+
+::placeholder {
+  font-size: 17px;
+}
+
+.login-button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: rgb(20, 0, 0);
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.login-button:hover{
+  background-color: #FF2828;
+}
+
 @media (max-width: 450px) {
   .h-custom {
     height: 100%;
   }
 }
+
+
