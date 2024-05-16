@@ -30,14 +30,14 @@ public class AdminController {
 	
 	//get all data		
 	@CrossOrigin(origins = "http://localhost:4200")
-	@GetMapping("/admin")
+	@GetMapping("/admins")
 	public List <AdminModel> getAllAdmins(){
 		return repo.findAll();
 	}
 
 	//create 
 	@CrossOrigin(origins = "http://localhost:4200")
-	@PostMapping("/admin")
+	@PostMapping("/admins")
 	public AdminModel createAdmin(@RequestBody AdminModel admin)
 	{
 		return repo.save(admin);
@@ -45,7 +45,7 @@ public class AdminController {
 	
 	// get data by id
 	@CrossOrigin(origins = "http://localhost:4200")
-	@GetMapping("/admin/{id}")
+	@GetMapping("/admins/{id}")
 	public ResponseEntity<AdminModel> getByID(@PathVariable Long id) {
 		AdminModel admin = repo.findById(id).orElseThrow(()-> new ResourceNotFoundException("Admin with id "+id+"does not exists"));
 		return ResponseEntity.ok(admin);
@@ -53,7 +53,7 @@ public class AdminController {
 
 	//update data
 	@CrossOrigin(origins = "http://localhost:4200")
-	@PutMapping ("/admin/{id}")
+	@PutMapping ("/admins/{id}")
 	public ResponseEntity<AdminModel> updateAdmin(@PathVariable Long id, @RequestBody AdminModel adminDetails){
 		AdminModel admin = repo.findById(id).orElseThrow(()-> new ResourceNotFoundException("Admin with id "+id+"does not exists"));
 
@@ -67,7 +67,7 @@ public class AdminController {
 
 	//delete data
 	@CrossOrigin(origins = "http://localhost:4200")
-	@DeleteMapping("/admin/{id}")
+	@DeleteMapping("/admins/{id}")
 	public ResponseEntity<Map<String, Boolean>> deleteAdmin(@PathVariable Long id){
 		AdminModel admin = repo.findById(id).orElseThrow(()-> new ResourceNotFoundException("Admin with id "+id+"does not exists"));
 
