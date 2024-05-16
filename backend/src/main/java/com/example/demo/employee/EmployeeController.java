@@ -1,4 +1,4 @@
-package com.example.demo.controller;
+package com.example.demo.employee;
 
 import java.util.HashMap;
 import java.util.List;
@@ -17,8 +17,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.exception.ResourceNotFoundException;
-import com.example.demo.model.Employee;
-import com.example.demo.repository.EmployeeRepository;
 
 
 
@@ -32,7 +30,7 @@ public class EmployeeController {
 	//get all data
 	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping("/employees")
-	public List <Employee> getAllEmployees(){
+	public List <EmployeeModel> getAllEmployees(){
 		return employeeRepository.findAll();
 	}  
 	
@@ -41,7 +39,7 @@ public class EmployeeController {
 	//create 
 	@CrossOrigin(origins = "http://localhost:4200")
 	@PostMapping("/employees")
-	public Employee createEmployee(@RequestBody Employee employee)
+	public EmployeeModel createEmployee(@RequestBody EmployeeModel employee)
 	{
 		return employeeRepository.save(employee);
 	}
@@ -50,8 +48,8 @@ public class EmployeeController {
 	// get data by id 
 	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping("/employees/{id}")
-	public ResponseEntity<Employee> getByID(@PathVariable Long id) {
-		Employee employee = employeeRepository.findById(id).
+	public ResponseEntity<EmployeeModel> getByID(@PathVariable Long id) {
+		EmployeeModel employee = employeeRepository.findById(id).
 				orElseThrow(()-> new ResourceNotFoundException("Employee with id "+id+"does not exists"));
 		return ResponseEntity.ok(employee);
 	}
@@ -60,8 +58,8 @@ public class EmployeeController {
 	//update data 
 	@CrossOrigin(origins = "http://localhost:4200")
 	@PutMapping ("/employees/{id}")
-	public ResponseEntity<Employee> updateEmployeeByID(@PathVariable Long id, @RequestBody Employee employeeDetails){
-		Employee employee = employeeRepository.findById(id).
+	public ResponseEntity<EmployeeModel> updateEmployeeByID(@PathVariable Long id, @RequestBody EmployeeModel employeeDetails){
+		EmployeeModel employee = employeeRepository.findById(id).
 				orElseThrow(()-> new ResourceNotFoundException("Employee with id "+id+"does not exists"));
 		
 		
@@ -73,7 +71,7 @@ public class EmployeeController {
 		employee.setJoiningDate(employeeDetails.getJoiningDate());
 		employee.setSalary(employeeDetails.getSalary());
 		
-		Employee updatedEmployee=employeeRepository.save(employee);
+		EmployeeModel updatedEmployee=employeeRepository.save(employee);
 		
 		return ResponseEntity.ok(updatedEmployee);
 }
@@ -85,7 +83,7 @@ public class EmployeeController {
 	public ResponseEntity <Map<String, Boolean> >deleteEmployee(@PathVariable Long id){
 		
 		
-		Employee employee = employeeRepository.findById(id).
+		EmployeeModel employee = employeeRepository.findById(id).
 				orElseThrow(()-> new ResourceNotFoundException("Employee with id "+id+"does not exists"));
 		
 		employeeRepository.delete(employee);

@@ -1,4 +1,4 @@
-package com.example.demo.adminController;
+package com.example.demo.admin;
 
 import java.util.List;
 import java.util.HashMap;
@@ -17,8 +17,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.exception.ResourceNotFoundException;
-import com.example.demo.adminModel.AdminModel;
-import com.example.demo.adminRepository.AdminRepository;
 
 
 @RestController

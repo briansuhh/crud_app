@@ -1,4 +1,4 @@
-package com.example.demo.userController;
+package com.example.demo.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
 // import org.springframework.boot.autoconfigure.security.SecurityProperties.User;
@@ -14,8 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.exception.ResourceNotFoundException;
-import com.example.demo.userModel.UserModel;
-import com.example.demo.userRepository.UserRepository;
 
 import java.util.HashMap;
 import java.util.List;
