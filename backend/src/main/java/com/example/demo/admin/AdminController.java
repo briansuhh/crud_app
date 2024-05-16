@@ -47,7 +47,7 @@ public class AdminController {
 	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping("/admin/{id}")
 	public ResponseEntity<AdminModel> getByID(@PathVariable Long id) {
-		AdminModel admin = repo.findById(id).orElseThrow(()-> new RuntimeException("Admin with id "+id+"does not exists"));
+		AdminModel admin = repo.findById(id).orElseThrow(()-> new ResourceNotFoundException("Admin with id "+id+"does not exists"));
 		return ResponseEntity.ok(admin);
 	}
 
