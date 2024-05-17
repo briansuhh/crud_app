@@ -20,14 +20,15 @@ export class AddUserComponent {
   private baseURL = 'http://localhost:8080/api/v1/users';
   user: User = new User();
 
+
   saveUser() {
-    this.userService.addUser(this.user).subscribe(
-      (data) => {
+    this.userService.addUser(this.user).subscribe({
+      next: (data) => {
         console.log(data);
         this.goToUserList();
       },
-      (error) => console.log(error)
-    );
+      error: (error) => console.log(error)
+    });
   }
 
   goToUserList() {

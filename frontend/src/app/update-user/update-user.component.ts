@@ -21,23 +21,23 @@ export class UpdateUserComponent {
   }
 
   ngOnInit(): void {
-    this.userID = this.route.snapshot.params['id'];
+    this.userID = this.route.snapshot.params['userID'];
 
-    this.userService.getUserById(this.userID).subscribe(
-      (data) => {
+    this.userService.getUserById(this.userID).subscribe({
+      next: (data) => {
         this.user = data;
       },
-      (error) => console.log(error)
-    );
+      error: (error) => console.log(error)
+    });
   }
 
   onSubmit() {
-    this.userService.updateUser(this.userID, this.user).subscribe(
-      (data) => {
+    this.userService.updateUser(this.userID, this.user).subscribe({
+      next: (data) => {
         this.goToUserList();
       },
-      (error) => console.log(error)
-    );
+      error: (error) => console.log(error)
+    });
   }
 
   goToUserList() {
