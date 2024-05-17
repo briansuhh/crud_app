@@ -1,15 +1,24 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
 import { UserListComponent } from './user-list/user-list.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
+
 import { HomeComponent } from './home/home.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
+
 import { TrackinglogListComponent } from './trackinglog-list/trackinglog-list.component';
 import { AddTrackinglogComponent } from './add-trackinglog/add-trackinglog.component';
 import { UpdateTrackinglogComponent } from './update-trackinglog/update-trackinglog.component';
 import { TrackinglogDetailsComponent } from './trackinglog-details/trackinglog-details.component';
+
+import { DriverListComponent } from './driver-list/driver-list.component';
+import { AddDriverComponent } from './add-driver/add-driver.component';
+import { UpdateDriverComponent } from './update-driver/update-driver.component';
+import { DriverDetailsComponent } from './driver-details/driver-details.component';
+
 
 
 const routes: Routes = [
@@ -25,6 +34,11 @@ const routes: Routes = [
   { path: 'add-trackinglog', component: AddTrackinglogComponent },
   { path: 'updating-trackinglog/:trackinglogID', component: UpdateTrackinglogComponent },
   { path: 'trackinglog-details/:trackinglogID', component: TrackinglogDetailsComponent },
+
+  { path: 'show-all-drivers', component: DriverListComponent },
+  { path: 'add-driver', component: AddDriverComponent },
+  { path: 'updating-driver/:driverID', component: UpdateDriverComponent },
+  { path: 'driver-details/:driverID', component: DriverDetailsComponent },
 
   
   { path: '**', redirectTo: 'home', pathMatch: 'full' },

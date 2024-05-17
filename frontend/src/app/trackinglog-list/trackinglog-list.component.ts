@@ -39,20 +39,20 @@ export class TrackinglogListComponent {
     });
   }
 
-  updateTrackinglog(trackinglogID: number) {
-    this.router.navigate(['updating-by-id', trackinglogID]);
+  updateTrackinglog(trackingID: number) {
+    this.router.navigate(['updating-by-id', trackingID]);
   }
 
-  deleteTrackinglog(trackinglogID: number) {
-    if (confirm('Are you sure to delete Trackinglog ID: ' + trackinglogID)) {
-      this.trackinglogService.deleteTrackinglog(trackinglogID).subscribe((data) => {
+  deleteTrackinglog(trackingID: number) {
+    if (confirm('Are you sure to delete Trackinglog ID: ' + trackingID)) {
+      this.trackinglogService.deleteTrackinglog(trackingID).subscribe((data) => {
         console.log(data);
         this.getTrackinglogs();
       });
     }
   }
 
-  detailsOfTrackinglog(trackinglogID: number) {
-    this.router.navigate(['trackinglog-details', trackinglogID]);
+  detailsOfTrackinglog(trackingID: number) {
+    this.router.navigate(['trackinglog-details', trackingID]);
   }
 }

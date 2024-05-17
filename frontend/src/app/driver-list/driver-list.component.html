@@ -3,14 +3,14 @@
     <br />
     
     <div>
-      <form (ngSubmit)="goToTrackinglog()">
+      <form (ngSubmit)="goToDriver()">
         <div class="inline">
           <input
             [(ngModel)]="EnteredID"
             type="text"
             class="form-control"
-            id="trackingID"
-            name="trackingID"
+            id="driverID"
+            name="driverID"
             placeholder="Search by ID"
             style="width: 300px"
           />
@@ -25,12 +25,11 @@
   
     <div class="button-table-container">
   
-      <div class="add-trackinglog-container">
-        <button (click)="addTrackinglog()" class="btn btn-primary">
-          Add Trackinglog
+      <div class="add-driver-container">
+        <button (click)="addDriver()" class="btn btn-primary">
+          Add Driver
         </button>
       </div>
-  
   
       <div class="table-container">
         <table
@@ -40,39 +39,43 @@
           <thead class="table-dark">
             <tr class="display block">
               <th>Id</th>
-              <th>Date</th>
-              <th>Time</th>
-              <th>Location</th>
-              <th>Activity</th>
-              <th>Responsibility</th>
+              <th>Name</th>
+              <th>Category</th>
+              <th>Vehicle Model</th>
+              <th>Plate Number</th>
+              <th>Year Of Issue</th>
+              <th>Phone</th>
+              <th>License</th>
               <th>Actions</th>
             </tr>
           </thead>
   
           <tbody>
-            <tr *ngFor="let trackinglog of trackinglogs">
-              <td>{{ trackinglog.trackingID }}</td>
-              <td>{{ trackinglog.date }}</td>
-              <td>{{ trackinglog.time }}</td>
-              <td>{{ trackinglog.location }}</td>
-              <td>{{ trackinglog.activity }}</td>
-              <td>{{ trackinglog.responsibility }}</td>
+            <tr *ngFor="let driver of drivers">
+              <td>{{ driver.driverID }}</td>
+              <td>{{ driver.name }}</td>
+              <td>{{ driver.category }}</td>
+              <td>{{ driver.vehicleModel }}</td>
+              <td>{{ driver.plateNumber }}</td>
+              <td>{{ driver.yearOfIssue }}</td>
+              <td>{{ driver.phoneNum }}</td>
+              <td>{{ driver.license }}</td>
               <td>
                 <button
-                  (click)="updateTrackinglog(trackinglog.trackingID)"
+                  (click)="updateDriver(driver.driverID)"
                   class="btn btn-secondary btn-sm"
                 >
                   Update
                 </button>
                 <button
-                  (click)="deleteTrackinglog(trackinglog.trackingID)"
+                  (click)="deleteDriver(driver.driverID)"
                   class="btn btn-danger btn-sm"
                   style="margin-left: 10px"
                 >
                   Delete
                 </button>
                 <button
-                  (click)="detailsOfTrackinglog(trackinglog.trackingID)"
+                  (click)="detailsOfDriver(driver.driverID)"
                   class="btn btn-success btn-sm"
                   style="margin-left: 10px"
                 >

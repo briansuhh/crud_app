@@ -29,6 +29,10 @@ import { TrackinglogListComponent } from './trackinglog-list/trackinglog-list.co
 import { AddTrackinglogComponent } from './add-trackinglog/add-trackinglog.component';
 import { UpdateTrackinglogComponent } from './update-trackinglog/update-trackinglog.component';
 import { TrackinglogDetailsComponent } from './trackinglog-details/trackinglog-details.component';
+import { DriverListComponent } from './driver-list/driver-list.component';
+import { AddDriverComponent } from './add-driver/add-driver.component';
+import { UpdateDriverComponent } from './update-driver/update-driver.component';
+import { DriverDetailsComponent } from './driver-details/driver-details.component';
 
 const svgIcons = ['car'];
 
@@ -46,6 +50,10 @@ const svgIcons = ['car'];
     AddTrackinglogComponent,
     UpdateTrackinglogComponent,
     TrackinglogDetailsComponent,
+    DriverListComponent,
+    AddDriverComponent,
+    UpdateDriverComponent,
+    DriverDetailsComponent,
   ],
   imports: [
     BrowserModule,

@@ -20,15 +20,15 @@ export class TrackinglogService {
     return this.httpClient.post(`${this.baseURL}`, trackinglog);
   }
 
-  getTrackinglogById(trackinglogID: number): Observable<Trackinglog> {
-    return this.httpClient.get<Trackinglog>(`${this.baseURL}/${trackinglogID}`);
+  getTrackinglogById(trackingID: number): Observable<Trackinglog> {
+    return this.httpClient.get<Trackinglog>(`${this.baseURL}/${trackingID}`);
   }
 
-  updateTrackinglog(trackinglogID: number, trackinglog: Trackinglog): Observable<Object> {
-    return this.httpClient.put(`${this.baseURL}/${trackinglogID}`, trackinglog);
+  updateTrackinglog(trackingID: number, trackinglog: Trackinglog): Observable<Object> {
+    return this.httpClient.put(`${this.baseURL}/${trackingID}`, trackinglog);
   }
 
-  deleteTrackinglog(trackinglogID: number): Observable<Object> {
-    return this.httpClient.delete(`${this.baseURL}/${trackinglogID}`);
+  deleteTrackinglog(trackingID: number): Observable<Object> {
+    return this.httpClient.delete(`${this.baseURL}/${trackingID}`);
   }
 }

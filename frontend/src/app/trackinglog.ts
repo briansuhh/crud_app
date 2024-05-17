@@ -1,5 +1,5 @@
 export class Trackinglog {
-    trackinglogID!: number;
+    trackingID!: number;
     date!: string;
     time!: string;
     location!: string;
