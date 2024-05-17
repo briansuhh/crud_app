@@ -30,7 +30,7 @@ export class UserListComponent {
 
   goToUser() {
     console.log(this.EnteredID);
-    this.router.navigate(['details-of-user', this.EnteredID]);
+    this.router.navigate(['user-details', this.EnteredID]);
   }
 
   getUsers() {
@@ -53,6 +53,6 @@ export class UserListComponent {
   }
 
   detailsOfUser(userID: number) {
-    this.router.navigate(['details-of-user', userID]);
+    this.router.navigate(['user-details', userID]);
   }
 }

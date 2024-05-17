@@ -4,11 +4,11 @@ import { UserService } from '../user.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-show-details',
-  templateUrl: './show-details.component.html',
-  styleUrls: ['./show-details.component.css'],
+  selector: 'app-user-details',
+  templateUrl: './user-details.component.html',
+  styleUrls: ['./user-details.component.css'],
 })
-export class ShowDetailsComponent {
+export class UserDetailsComponent {
   userID: number;
   user!: User;
 

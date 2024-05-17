@@ -20,16 +20,13 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
-
 import { UpdateUserComponent } from './update-user/update-user.component';
-import { ShowDetailsComponent } from './show-details/show-details.component';
+import { UserDetailsComponent } from './user-details/user-details.component';
 import { HomeComponent } from './home/home.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-const svgIcons = [
-  'car',
-];
+const svgIcons = ['car'];
 
 @NgModule({
   declarations: [
@@ -38,7 +35,7 @@ const svgIcons = [
 
     AddUserComponent,
     UpdateUserComponent,
-    ShowDetailsComponent,
+    UserDetailsComponent,
     AdminLoginComponent,
   ],
   imports: [
@@ -66,10 +63,12 @@ const svgIcons = [
 })
 export class AppModule {
   constructor(matIconRegistry: MatIconRegistry, domSanitizer: DomSanitizer) {
-    svgIcons.forEach(iconName => {
+    svgIcons.forEach((iconName) => {
       matIconRegistry.addSvgIcon(
         iconName,
-        domSanitizer.bypassSecurityTrustResourceUrl(`assets/icons/${iconName}.svg`)
+        domSanitizer.bypassSecurityTrustResourceUrl(
+          `assets/icons/${iconName}.svg`
+        )
       );
     });
   }
