@@ -1,10 +1,10 @@
 <body>
   <br />
   <br />
-
-  <div class="justify-content-center align-items-center">
+  
+  <div>
     <form (ngSubmit)="goToUser()">
-      <div class="form-group col-md-6 inline">
+      <div class="inline">
         <input
           [(ngModel)]="EnteredID"
           type="text"
@@ -18,61 +18,74 @@
       </div>
     </form>
   </div>
-  <br />
-  <br />
-  <div>
-    <table
-      style="margin-bottom: 50px"
-      class="table table-responsive table-striped border-dark"
-    >
-      <thead class="table-dark">
-        <tr class="display block">
-          <th>Id</th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Phone</th>
-          <th>Email</th>
-          <th>Address</th>
-          <th>Role</th>
-          <th>Responsibility</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
 
-      <tbody>
-        <tr *ngFor="let user of users">
-          <td>{{ user.userID }}</td>
-          <td>{{ user.firstName }}</td>
-          <td>{{ user.lastName }}</td>
-          <td>{{ user.phoneNum }}</td>
-          <td>{{ user.email }}</td>
-          <td>{{ user.address }}</td>
-          <td>{{ user.role }}</td>
-          <td>{{ user.responsibility }}</td>
-          <td>
-            <button
-              (click)="updateUser(user.userID)"
-              class="btn btn-secondary btn-sm"
-            >
-              Update
-            </button>
-            <button
-              (click)="deleteUser(user.userID)"
-              class="btn btn-danger btn-sm"
-              style="margin-left: 10px"
-            >
-              Delete
-            </button>
-            <button
-              (click)="detailsOfUser(user.userID)"
-              class="btn btn-success btn-sm"
-              style="margin-left: 10px"
-            >
-              View
-            </button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+  <br />
+  <br /><br />
+
+
+  <div class="button-table-container">
+
+    <div class="add-user-container">
+      <button (click)="addUser()" class="btn btn-primary">
+        Add User
+      </button>
+    </div>
+
+
+    <div class="table-container">
+      <table
+        style="margin-bottom: 50px"
+        class="table table-responsive table-striped border-dark"
+      >
+        <thead class="table-dark">
+          <tr class="display block">
+            <th>Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Role</th>
+            <th>Responsibility</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let user of users">
+            <td>{{ user.userID }}</td>
+            <td>{{ user.firstName }}</td>
+            <td>{{ user.lastName }}</td>
+            <td>{{ user.phoneNum }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.address }}</td>
+            <td>{{ user.role }}</td>
+            <td>{{ user.responsibility }}</td>
+            <td>
+              <button
+                (click)="updateUser(user.userID)"
+                class="btn btn-secondary btn-sm"
+              >
+                Update
+              </button>
+              <button
+                (click)="deleteUser(user.userID)"
+                class="btn btn-danger btn-sm"
+                style="margin-left: 10px"
+              >
+                Delete
+              </button>
+              <button
+                (click)="detailsOfUser(user.userID)"
+                class="btn btn-success btn-sm"
+                style="margin-left: 10px"
+              >
+                View
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </body>

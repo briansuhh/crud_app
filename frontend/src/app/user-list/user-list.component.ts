@@ -24,6 +24,10 @@ export class UserListComponent {
     this.getUsers();
   }
 
+  addUser() {
+    this.router.navigate(['add-user']);
+  }
+
   goToUser() {
     console.log(this.EnteredID);
     this.router.navigate(['details-of-user', this.EnteredID]);
