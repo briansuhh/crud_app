@@ -25,18 +25,27 @@ import { UserDetailsComponent } from './user-details/user-details.component';
 import { HomeComponent } from './home/home.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TrackinglogListComponent } from './trackinglog-list/trackinglog-list.component';
+import { AddTrackinglogComponent } from './add-trackinglog/add-trackinglog.component';
+import { UpdateTrackinglogComponent } from './update-trackinglog/update-trackinglog.component';
+import { TrackinglogDetailsComponent } from './trackinglog-details/trackinglog-details.component';
 
 const svgIcons = ['car'];
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserListComponent,
+    AdminLoginComponent,
 
+    UserListComponent,
     AddUserComponent,
     UpdateUserComponent,
     UserDetailsComponent,
-    AdminLoginComponent,
+
+    TrackinglogListComponent,
+    AddTrackinglogComponent,
+    UpdateTrackinglogComponent,
+    TrackinglogDetailsComponent,
   ],
   imports: [
     BrowserModule,

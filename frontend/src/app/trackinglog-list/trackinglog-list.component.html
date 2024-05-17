@@ -1,0 +1,88 @@
+<body>
+    <br />
+    <br />
+    
+    <div>
+      <form (ngSubmit)="goToTrackinglog()">
+        <div class="inline">
+          <input
+            [(ngModel)]="EnteredID"
+            type="text"
+            class="form-control"
+            id="trackinglogID"
+            name="trackinglogID"
+            placeholder="Search by ID"
+            style="width: 300px"
+          />
+          <button class="btn btn-secondary" type="submit">Search</button>
+        </div>
+      </form>
+    </div>
+  
+    <br />
+    <br />
+    <br />
+  
+    <div class="button-table-container">
+  
+      <div class="add-trackinglog-container">
+        <button (click)="addTrackinglog()" class="btn btn-primary">
+          Add Trackinglog
+        </button>
+      </div>
+  
+  
+      <div class="table-container">
+        <table
+          style="margin-bottom: 50px"
+          class="table table-responsive table-striped border-dark"
+        >
+          <thead class="table-dark">
+            <tr class="display block">
+              <th>Trackinglog ID</th>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Location</th>
+              <th>Activity</th>
+              <th>Responsibility</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+  
+          <tbody>
+            <tr *ngFor="let trackinglog of trackinglogs">
+              <td>{{ trackinglog.trackinglogID }}</td>
+              <td>{{ trackinglog.date }}</td>
+              <td>{{ trackinglog.time }}</td>
+              <td>{{ trackinglog.location }}</td>
+              <td>{{ trackinglog.activity }}</td>
+              <td>{{ trackinglog.responsibility }}</td>
+              <td>
+                <button
+                  (click)="updateTrackinglog(trackinglog.trackinglogID)"
+                  class="btn btn-secondary btn-sm"
+                >
+                  Update
+                </button>
+                <button
+                  (click)="deleteTrackinglog(trackinglog.trackinglogID)"
+                  class="btn btn-danger btn-sm"
+                  style="margin-left: 10px"
+                >
+                  Delete
+                </button>
+                <button
+                  (click)="detailsOfTrackinglog(trackinglog.trackinglogID)"
+                  class="btn btn-success btn-sm"
+                  style="margin-left: 10px"
+                >
+                  View
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+  
