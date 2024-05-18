@@ -25,6 +25,8 @@ export class TrackinglogService {
   }
 
   updateTrackinglog(trackingID: number, trackinglog: Trackinglog): Observable<Object> {
+    // console.log(trackinglog);
+    // console.log(trackingID);
     return this.httpClient.put(`${this.baseURL}/${trackingID}`, trackinglog);
   }
 

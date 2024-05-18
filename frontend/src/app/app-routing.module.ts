@@ -27,17 +27,17 @@ const routes: Routes = [
   { path: 'login', component: AdminLoginComponent },
   { path: 'show-all-users', component: UserListComponent },
   { path: 'add-user', component: AddUserComponent },
-  { path: 'updating-by-id/:userID', component: UpdateUserComponent },
+  { path: 'update-user/:userID', component: UpdateUserComponent },
   { path: 'user-details/:userID', component: UserDetailsComponent },
 
   { path: 'show-all-trackinglogs', component: TrackinglogListComponent },
   { path: 'add-trackinglog', component: AddTrackinglogComponent },
-  { path: 'updating-trackinglog/:trackinglogID', component: UpdateTrackinglogComponent },
-  { path: 'trackinglog-details/:trackinglogID', component: TrackinglogDetailsComponent },
+  { path: 'update-trackinglog/:trackingID', component: UpdateTrackinglogComponent },
+  { path: 'trackinglog-details/:trackingID', component: TrackinglogDetailsComponent },
 
   { path: 'show-all-drivers', component: DriverListComponent },
   { path: 'add-driver', component: AddDriverComponent },
-  { path: 'updating-driver/:driverID', component: UpdateDriverComponent },
+  { path: 'update-driver/:driverID', component: UpdateDriverComponent },
   { path: 'driver-details/:driverID', component: DriverDetailsComponent },
 
   

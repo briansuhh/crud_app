@@ -1,1 +1,125 @@
-<p>update-trackinglog works!</p>
+<body>
+    <br /><br />
+    <br /><br />
+    <div class="container-sm">
+      <div class="col-md-6 offset-md-3 container-sm">
+        <form
+          #f="ngForm"
+          (ngSubmit)="f.form.valid && onSubmit()"
+          class="row g-3 form-container container-sm"
+        >
+          <div class="form-group col-md-6">
+            <label class="form-label"><b>Date</b></label>
+            <input
+              type="date"
+              class="form-control"
+              id="date"
+              [(ngModel)]="trackinglog.date"
+              name="date"
+              required
+              #date="ngModel"
+              [ngClass]="{ 'is-invalid': f.submitted && date.errors }"
+            />
+            <div *ngIf="f.submitted && date.errors" class="invalid-feedback">
+              <div *ngIf="date.errors['required']">Date is required</div>
+            </div>
+          </div>
+  
+          <div class="form-group col-md-6">
+            <label class="form-label"><b>Time</b></label>
+            <input
+              type="time"
+              class="form-control"
+              id="time"
+              [(ngModel)]="trackinglog.time"
+              name="time"
+              required
+              #time="ngModel"
+              [ngClass]="{ 'is-invalid': f.submitted && time.errors }"
+            />
+            <div *ngIf="f.submitted && time.errors" class="invalid-feedback">
+              <div *ngIf="time.errors['required']">Time is required</div>
+            </div>
+          </div>
+  
+          <div class="form-group col-md-12">
+            <label class="form-label"><b>Location</b></label>
+            <input
+              type="text"
+              class="form-control"
+              id="location"
+              [(ngModel)]="trackinglog.location"
+              name="location"
+              required
+              minlength="3"
+              #location="ngModel"
+              [ngClass]="{ 'is-invalid': f.submitted && location.errors }"
+            />
+            <div *ngIf="f.submitted && location.errors" class="invalid-feedback">
+              <div *ngIf="location.errors['required']">Location is required</div>
+              <div *ngIf="location.errors['minlength']">
+                Location must be at least 3 characters long
+              </div>
+            </div>
+          </div>
+  
+          <div class="form-group col-md-12">
+            <label class="form-label"><b>Activity</b></label>
+            <input
+              type="text"
+              class="form-control"
+              id="activity"
+              [(ngModel)]="trackinglog.activity"
+              name="activity"
+              required
+              #activity="ngModel"
+              [ngClass]="{ 'is-invalid': f.submitted && activity.errors }"
+            />
+            <div *ngIf="f.submitted && activity.errors" class="invalid-feedback">
+              <div *ngIf="activity.errors['required']">Activity is required</div>
+            </div>
+          </div>
+  
+          <div class="form-group col-md-12">
+            <label class="form-label"><b>Responsibility</b></label>
+            <input
+              type="text"
+              class="form-control"
+              id="responsibility"
+              [(ngModel)]="trackinglog.responsibility"
+              name="responsibility"
+              required
+              #responsibility="ngModel"
+              [ngClass]="{ 'is-invalid': f.submitted && responsibility.errors }"
+            />
+            <div *ngIf="f.submitted && responsibility.errors" class="invalid-feedback">
+              <div *ngIf="responsibility.errors['required']">Responsibility is required</div>
+            </div>
+          </div>
+  
+          <div></div>
+          
+          <div class="form-group col-md-6">
+            <button
+              class="btn btn-success full-width-button"
+              type="submit"
+              id="reg"
+            >
+              Submit
+            </button>
+          </div>
+  
+          <div class="col-md-6">
+            <button
+              type="button"
+              (click)="goToTrackinglogList()"
+              class="btn btn-danger full-width-button"
+            >
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+  

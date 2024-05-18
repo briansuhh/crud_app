@@ -40,7 +40,7 @@ export class DriverListComponent {
   }
 
   updateDriver(driverID: number) {
-    this.router.navigate(['updating-by-id', driverID]);
+    this.router.navigate(['update-driver', driverID]);
   }
 
   deleteDriver(driverID: number) {

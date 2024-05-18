@@ -40,7 +40,7 @@ export class UserListComponent {
   }
 
   updateUser(userID: number) {
-    this.router.navigate(['updating-by-id', userID]);
+    this.router.navigate(['update-user', userID]);
   }
 
   deleteUser(userID: number) {

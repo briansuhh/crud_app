@@ -40,7 +40,7 @@ export class TrackinglogListComponent {
   }
 
   updateTrackinglog(trackingID: number) {
-    this.router.navigate(['updating-by-id', trackingID]);
+    this.router.navigate(['update-trackinglog', trackingID]);
   }
 
   deleteTrackinglog(trackingID: number) {
