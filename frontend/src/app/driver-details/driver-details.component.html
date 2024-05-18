@@ -1,1 +1,68 @@
-<p>driver-details works!</p>
+<body>
+  <br />
+  <br />
+  <div class="container-sm">
+    <div class="col-md-6 offset-md-3 container-sm">
+      <table class="table table-striped border-dark">
+        <thead class="table-dark">
+          <tr>
+            <th>Attribute</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Driver ID</b></td>
+            <td>{{ driver.driverID }}</td>
+          </tr>
+          <tr>
+            <td><b>Name</b></td>
+            <td>{{ driver.name }}</td>
+          </tr>
+          <tr>
+            <td><b>Category</b></td>
+            <td>{{ driver.category }}</td>
+          </tr>
+          <tr>
+            <td><b>Vehicle Model</b></td>
+            <td>{{ driver.vehicleModel }}</td>
+          </tr>
+          <tr>
+            <td><b>Plate Number</b></td>
+            <td>{{ driver.plateNumber }}</td>
+          </tr>
+          <tr>
+            <td><b>Year Of Issue</b></td>
+            <td>{{ driver.yearOfIssue }}</td>
+          </tr>
+          <tr>
+            <td><b>Phone Number</b></td>
+            <td>{{ driver.phoneNum }}</td>
+          </tr>
+          <tr>
+            <td><b>License</b></td>
+            <td>{{ driver.license }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="row">
+        <div class="form-group col-md-6">
+          <a
+            routerLink="/updating-by-id/{{ driver.driverID }}"
+            id="btn1"
+            class="btn btn-secondary full-width-button"
+            >Update Details</a
+          >
+        </div>
+        <div class="form-group col-md-6">
+          <a
+            routerLink="/show-all-drivers"
+            id="btn2"
+            class="btn btn-danger full-width-button"
+            >Back</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
